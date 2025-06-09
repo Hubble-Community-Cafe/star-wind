@@ -1,0 +1,20 @@
+{
+  "name": "star-wind",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "npm run build && node dist/index.js",
+    "build": "tsc"
+  },
+  "author": "Hubble Community Cafe",
+  "license": "AGPL-3.0-or-later",
+  "description": "",
+  "devDependencies": {
+    "@types/express": "^4.17.1",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "express": "^4.17.1"
+  }
+}
