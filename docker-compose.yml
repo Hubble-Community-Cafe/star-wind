@@ -1,0 +1,11 @@
+services:
+  app:
+    # image: ghcr.io/Hubble-Community-Cafe/star-wind:latest
+    build: .
+    ports:
+      - "9999:3001"
+    environment:
+      - STARCOMMUNITY_PUBLIC_KEY_URL=https://api.test.starcommunity.app/.well-known/webhooks.key
+      - AURORA_URL=http://localhost:3000
+      - AURORA_API_KEY=beep
+    # command: ["sh", "-c", "sleep infinity"]
