@@ -5,11 +5,13 @@ import { createOrder } from './aurora';
 
 const webhooksRouter = Router();
 
-
-
 webhooksRouter.post('/food-order-completed', (req, res) => {
     createOrder(req.body.orderNumber);
     res.status(204).send();
 })
+
+/**
+ * Add more webhook endpoints here as needed.
+ */
 
 export default webhooksRouter;

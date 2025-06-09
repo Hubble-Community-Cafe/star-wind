@@ -19,7 +19,7 @@ app.use(function (req, res, next) {
 });
 
 app.get("/", (req, res) => {
-  res.send("See https://github.com/hubble-community-cafe/starcommunity-to-aurora for more information");
+  res.send("See https://github.com/hubble-community-cafe/star-wind for more information");
 });
 
 app.use(webhooksRouter);
