@@ -16,5 +16,5 @@ WORKDIR /app
 COPY --from=build --chown=node /app/node_modules /app/node_modules
 COPY --from=build --chown=node /app/dist /app
 
-CMD [ "node", "src/index.js" ]
+CMD [ "node", "index.js" ]
 EXPOSE 3000
