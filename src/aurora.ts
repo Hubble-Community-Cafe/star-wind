@@ -26,6 +26,10 @@ export async function createOrder(orderNumber: number): Promise<void> {
 
 export async function getScreens(): Promise<Screen[]> {
     const response = await fetchAurora('screen', 'GET');
+    if (!response.ok) {
+        const text = await response.text();
+        throw new Error(`GET /screen failed (${response.status}): ${text}`);
+    }
     return response.json();
 }
 
