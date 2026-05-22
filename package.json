@@ -4,7 +4,9 @@
   "main": "dist/index.js",
   "scripts": {
     "start": "npm run build && node dist/index.js",
-    "build": "tsc"
+    "build": "tsc",
+    "test-screen-state": "npm run build && node dist/test-screen-state.js",
+    "test-food-order": "npm run build && node dist/test-food-order.js"
   },
   "author": "Hubble Community Cafe",
   "license": "AGPL-3.0-or-later",
