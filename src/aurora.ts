@@ -25,12 +25,13 @@ export async function createOrder(orderNumber: number): Promise<void> {
 }
 
 export async function getScreens(): Promise<Screen[]> {
-    const response = await fetchAurora('screen', 'GET');
+    const response = await fetchAurora('handler/screen', 'GET');
     if (!response.ok) {
         const text = await response.text();
-        throw new Error(`GET /screen failed (${response.status}): ${text}`);
+        throw new Error(`GET /handler/screen failed (${response.status}): ${text}`);
     }
-    return response.json();
+    const handlers: Array<{ id: string; name: string; entities: Screen[] }> = await response.json();
+    return handlers.flatMap(handler => handler.entities);
 }
 
 export async function setScreenHandler(screenId: number, handlerName: string): Promise<void> {
